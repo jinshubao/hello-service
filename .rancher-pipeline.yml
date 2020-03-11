@@ -11,9 +11,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: hello-service:1.0
+      tag: jinshubao/hello-service:1.0
       pushRemote: true
-      registry: 127.0.0.1:34625
+      registry: index.docker.io
   - publishCatalogConfig:
       path: ./chart/hello-service/1.0
       catalogTemplate: hello-service
