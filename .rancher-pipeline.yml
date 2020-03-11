@@ -1,12 +1,12 @@
 stages:
-- name: build
+- name: complier
   steps:
   - runScriptConfig:
       image: gradle:5.6.3-jdk8
       shellScript: gradle build && echo "hello world!"
   when:
     event: {}
-- name: deploy
+- name: build
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
@@ -14,21 +14,25 @@ stages:
       tag: jinshubao/hello-service:1.0
       pushRemote: true
       registry: index.docker.io
+- name: publish
+  steps:
   - publishCatalogConfig:
-      path: ./chart/hello-service/1.0
+      path: ./charts/hello-service/1.0
       catalogTemplate: hello-service
       version: "1.0"
-      gitUrl: https://github.com/jinshubao/hello-service.git
+      gitUrl: https://github.com/charts.git
       gitBranch: master
       gitAuthor: jinshubao
       gitEmail: jinshubao123@126.com
     envFrom:
-    - sourceName: github
-      sourceKey: USERNAME
-      targetKey: USERNAME
-    - sourceName: github
-      sourceKey: PASSWORD
-      targetKey: PASSWORD
+      - sourceName: github
+        sourceKey: USERNAME
+        targetKey: USERNAME
+      - sourceName: github
+        sourceKey: PASSWORD
+        targetKey: PASSWORD
+- name: apply
+  steps:
   - applyAppConfig:
       catalogTemplate: hello-service
       version: "1.0"
