@@ -11,7 +11,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: hello-service
+      tag: hello-service:1.0
       registry: 127.0.0.1:34625
 timeout: 60
 notification: {}
