@@ -12,29 +12,4 @@ stages:
       tag: jinshubao/hello-service:1.0
       pushRemote: true
       registry: index.docker.io
-- name: publish
-  steps:
-  - publishCatalogConfig:
-      path: ./hello-service/1.0
-      catalogTemplate: hello-service
-      version: "1.0"
-      gitUrl: https://github.com/jinshubao/charts.git
-      gitBranch: master
-      gitAuthor: jinshubao
-      gitEmail: jinshubao123@126.com
-    envFrom:
-      - sourceName: github
-        sourceKey: USERNAME
-        targetKey: USERNAME
-      - sourceName: github
-        sourceKey: PASSWORD
-        targetKey: PASSWORD
-- name: apply
-  steps:
-  - applyAppConfig:
-      catalogTemplate: hello-service
-      version: "1.0"
-      name: hello-service
-      targetNamespace: default
-timeout: 60
-notification: {}
+timeout: 160
