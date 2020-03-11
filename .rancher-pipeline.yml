@@ -15,7 +15,7 @@ stages:
 - name: publish
   steps:
   - publishCatalogConfig:
-      path: ./charts/hello-service/1.0
+      path: ./hello-service/1.0
       catalogTemplate: hello-service
       version: "1.0"
       gitUrl: https://github.com/jinshubao/charts.git
