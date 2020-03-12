@@ -9,8 +9,8 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: hello-service:1.1
+      tag: hello-service:1.2
       pushRemote: true
-      registry: 10.110.1.141:30257
+      registry: 127.0.0.1:34625
 timeout: 160
 notification: {}
