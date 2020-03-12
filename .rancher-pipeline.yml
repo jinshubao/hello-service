@@ -11,6 +11,6 @@ stages:
       buildContext: .
       tag: hello-service:1.1
       pushRemote: true
-      registry: 127.0.0.1:34625
+      registry: 10.110.1.141:30257
 timeout: 160
 notification: {}
