@@ -9,7 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: jinshubao/hello-service:1.2
+      tag: jinshubao/${CICD_GIT_REPO_NAME}:${CICD_GIT_BRANCH}
       pushRemote: true
       registry: index.docker.io
 timeout: 160
