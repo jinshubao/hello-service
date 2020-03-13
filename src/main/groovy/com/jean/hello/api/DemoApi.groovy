@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RestController
 @CompileStatic
 @TypeChecked
 @RestController
-@RequestMapping("/")
 class DemoApi {
 
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     Object list() {
         return "hello world!"
     }
