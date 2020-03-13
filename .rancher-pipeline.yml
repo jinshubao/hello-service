@@ -9,7 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: hello-service:1.2
+      tag: jinshubao/hello-service:1.2
       pushRemote: true
       registry: index.docker.io
 timeout: 160
