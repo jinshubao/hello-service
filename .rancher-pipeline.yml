@@ -9,8 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: 127.0.0.1/${CICD_GIT_REPO_NAME}:${CICD_GIT_BRANCH}
-      pushRemote: true
+      tag: ${CICD_GIT_REPO_NAME}:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34316
 timeout: 160
 notification: {}
