@@ -13,3 +13,7 @@ stages:
       registry: 127.0.0.1:34316
 timeout: 160
 notification: {}
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
