@@ -9,8 +9,8 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: jinshubao/${CICD_GIT_REPO_NAME}:${CICD_GIT_BRANCH}
+      tag: 127.0.0.1/${CICD_GIT_REPO_NAME}:${CICD_GIT_BRANCH}
       pushRemote: true
-      registry: index.docker.io
+      registry: 127.0.0.1:34316
 timeout: 160
 notification: {}
