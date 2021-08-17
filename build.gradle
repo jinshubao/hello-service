@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        maven { url "http://10.52.2.106:8081/repository/maven-public/" }
         mavenCentral()
     }
 
@@ -25,7 +24,6 @@ targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = "UTF-8"
 
 repositories {
-    maven { url "http://10.52.2.106:8081/repository/maven-public/" }
     mavenCentral()
 }
 
